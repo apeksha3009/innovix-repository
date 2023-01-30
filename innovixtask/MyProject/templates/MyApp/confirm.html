@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+    <title>CONFIRMATION PAGE</title>
+{% endblock %}
+
+{% block content %}
+
+<form method="post" class="container jumbotron">
+
+    <center>
+        <h2>User Registration Form</h2>
+
+        {% csrf_token %}
+        <p>Do you rally want to delete this record ?</p>
+
+
+        <input type="submit" value="Yes">
+        <button><a href="{% url 'display' %}">NO</a></button>
+    </center>
+</form>
+
+{% endblock %}

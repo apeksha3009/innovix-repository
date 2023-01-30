@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+        {% block title %}
+        <title>Update Form</title>
+        {% endblock %}
+ 
+
+        {% block content %}
+        <br>
+        
+        <form method="post" enctype="multipart/form-data" class="container jumbotron">
+            {% csrf_token %}
+            <center>
+            <h2>Profile</h2>
+            <img src="{{user.profile_pic.url}}" height="200px" width="200px" class="rounded-circle" ></image><br><br>
+            <button class="btn btn-outline-primary btn-small"><a href="{% url 'remove' user.id %}">Remove Image</a></button>
+            </center>
+            <br><br>
+            {{form|crispy}}
+            <br>
+            <input type="submit"  class="btn btn-success" value="Update User"/>
+        </form>
+         
+        {% endblock %}

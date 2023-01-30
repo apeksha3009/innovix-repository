@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+    <title>LOGIN PAGE</title>
+{% endblock %}
+
+{% block content %}
+
+<form method="post" class="container jumbotron" enctype="multipart/form-data">
+
+    <center>
+        <h2>User Login Form</h2><br>
+
+        {% csrf_token %}
+
+        <input type="text" placeholder="UserName" name="un"/>
+        <br>
+        <input type="password" placeholder="Password" name="pass"/>
+        <br>
+        <br>
+
+        <input type="submit" value="Login"  class="btn btn-lg btn-success float-center">
+    </center>
+</form>
+
+{% endblock %}
